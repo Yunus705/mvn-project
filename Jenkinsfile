@@ -20,9 +20,9 @@ pipeline {
        steps{
         deploy adapters: [
             tomcat9(
-                credentialsId: 'testing', 
+                credentialsId: 'servercredentials', 
                 path: '', 
-                url: 'http://13.201.89.139:8080'
+                url: 'http://3.110.218.245:8080'
             )
         ], contextPath: '/app', 
         war: '**/*.war'
@@ -33,9 +33,9 @@ pipeline {
         input message: 'continue ?', ok: 'yes'
         deploy adapters: [
             tomcat9(
-                credentialsId: 'testing', 
+                credentialsId: 'servercredentials', 
                 path: '', 
-                url: 'http://13.126.159.208:8080/'
+                url: 'http://13.233.102.131:8080'
             )
         ], contextPath: '/app', 
         war: '**/*.war'
